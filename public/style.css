@@ -1,0 +1,350 @@
+.clear-margin {
+  margin: 0;
+}
+.space-top {
+  margin-top: 10px;
+}
+.icon-left {
+  margin-right: 5px;
+}
+.icon-right {
+  margin-left: 5px;
+}
+.labels {
+  word-spacing: 5px;
+}
+.label-keyword {
+  display: inline-block;
+  background: #7eb0db;
+  color: white;
+  font-size: 0.9em;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #357ebd;
+}
+.img-circle {
+  object-fit: cover;
+  object-position: center;
+}
+.about-me {
+  margin-top: 2rem;
+}
+.about-me-title {
+  margin-top: -1.5rem;
+}
+body {
+  font-family: 'Lato';
+  background: whitesmoke;
+  color: #333333;
+}
+.main {
+  padding: 5px;
+}
+.card {
+  background: #ffffff;
+  border: 6px solid #e6e6e6;
+  border-radius: 5px;
+  min-height: 300px;
+  padding: 10px;
+}
+.card-nested {
+  margin-top: 0px;
+  min-height: 0;
+  margin-bottom: 10px;
+  border-width: 1px 0 0 0;
+}
+
+.background-card {
+  padding: 10px 20px;
+}
+.card-wrapper {
+  padding: 5px;
+}
+.text-bolder {
+  font-weight: bold;
+}
+.background-details .detail {
+  display: table;
+  padding: 10px 0;
+}
+.background-details .detail .icon {
+  min-width: 45px;
+  max-width: 45px;
+  text-align: center;
+}
+.background-details .detail .info {
+  width: 100%;
+}
+.background-details .detail .title,
+.background-details .detail .icon {
+  color: #707070;
+}
+.background-details .detail .icon,
+.background-details .detail .info {
+  display: table-cell;
+  padding: 0 10px;
+}
+.info .content.has-sidebar {
+  width: 80%;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10px;
+  border-right: 1px solid #cdcdcd;
+}
+.info .sidebar {
+  margin-left: 80%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.profile-pic {
+  padding: 15px 0;
+}
+.contact-details .detail {
+  display: table;
+  padding: 8px 0;
+}
+.contact-details .detail .icon {
+  padding: 0 20px;
+  color: #707070;
+}
+.contact-details .detail .info {
+  font-size: 0.9em;
+}
+.contact-details .detail .icon,
+.contact-details .detail .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.social-link {
+  margin-left: 5px;
+}
+.social-link:first-child {
+  margin-left: 0;
+}
+.social-link:hover {
+  text-decoration: none;
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+.link-github {
+  color: #454545;
+}
+.link-github:hover {
+  color: #2b2b2b;
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+.link-twitter {
+  color: #33ccff;
+}
+.link-twitter:hover {
+  color: #00bfff;
+}
+.link-blog {
+  color: #f36f24;
+}
+.link-blog:hover {
+  color: #d8560c;
+}
+.link-linkedin {
+  color: #007bb6;
+}
+.link-linkedin:hover {
+  color: #005983;
+}
+.link-skype {
+  color: #12a5f4;
+}
+.link-skype:hover {
+  color: #0986ca;
+}
+.card-skills {
+  position: relative;
+}
+.skill-level {
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.skill-level .skill-progress {
+  position: absolute;
+  border-radius: 3px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: height 1s ease;
+}
+.skill-level .skill-progress.beginner {
+  height: 50%;
+  background: #e74c3c;
+}
+.skill-level .skill-progress.intermediate {
+  height: 70%;
+  background: #f1c40f;
+}
+.skill-level .skill-progress.advanced {
+  height: 80%;
+  background: #428bca;
+}
+.skill-level .skill-progress.master {
+  height: 95%;
+  background: #5cb85c;
+}
+.skill-info {
+  margin-left: 10px;
+}
+
+.mozilla-icon {
+  margin-bottom: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.five-hundred-px-icon {
+  margin-bottom: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.photo-icon {
+  margin-bottom: 15px;
+  margin-left: 5px;
+  width: 40px;
+  height: 30px;
+}
+
+.hacker-icon {
+  margin-bottom: 15px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.tumblr-icon {
+  margin-bottom: 15px;
+  margin-left: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.github-icon {
+  margin-bottom: 15px;
+  width: 35px;
+  height: 35px;
+}
+
+.twitter-icon {
+  margin-bottom: 15px;
+  width: 35px;
+  height: 35px;
+}
+
+.stackoverflow-icon {
+  margin-bottom: 15px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+/*.underline:hover {
+  text-decoration: none;
+}*/
+
+/*.underline:hover::before { 
+  content: ""; 
+} 
+.underline:hover::after { 
+  content: ""; 
+} */
+
+.underline {
+  text-decoration: none !important;
+  position: relative;
+}
+
+.underline:after,.underline:before {
+  content: '';
+  text-decoration: none;
+  margin-bottom: 1px;
+  height: 1.8px;
+  position: absolute;
+  bottom: -5px;
+  left: 0%;
+  width: 0%;
+  background: #357ebd;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+
+.underline:hover:before {
+  width: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.underline:hover:after {
+  width: 50%;
+  right: 50%;
+  opacity: 1;
+}
+
+.label {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 780px) {
+  .img-circle {
+    margin-bottom: -2.3rem;
+  }
+  .affix {
+        position: static;
+  }
+  .contact-details .detail {
+    margin-top: -0.25rem;
+  } 
+  .background-details .detail {
+    margin-top: -2rem;
+    margin-left: -1.25rem;
+  } 
+  .h4 {
+    font-size: 16px;
+  }
+  .background-details .detail .icon,
+  .background-details .detail .info {
+    display: table-cell;
+    padding: 0;
+  }
+  .about-me {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .card-nested {
+    margin-left: -4rem;
+  }
+  ul ul, ol ul, ul ol, ol ol {
+    margin-left: -2rem;
+    margin-bottom: 2rem;
+  }
+  .title {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .end-of-page {
+    margin-bottom: 200px;
+  }
+  .info .sidebar {
+    padding: 10px 20px;
+  }
+  .master-degree-duation {
+    margin-bottom: 7rem;
+  }
+  .work-experience {
+    margin-bottom: -2rem;
+  }
+}
