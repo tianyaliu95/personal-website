@@ -17,12 +17,15 @@
   display: inline-block;
   background: #7eb0db;
   color: white;
-  font-size: 0.9em;
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid #357ebd;
+}
+.label {
+  font-size: 12px !important;
+  margin-bottom: 1rem;
 }
 .img-circle {
   object-fit: cover;
@@ -35,8 +38,8 @@
   margin-top: -1.5rem;
 }
 body {
-  font-family: 'Lato';
-  background: whitesmoke;
+  font-family: 'Lato' !important;
+  background: whitesmoke !important;
   color: #333333;
 }
 .main {
@@ -110,7 +113,7 @@ body {
   color: #707070;
 }
 .contact-details .detail .info {
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
 }
 .contact-details .detail .icon,
 .contact-details .detail .info {
@@ -294,8 +297,13 @@ body {
   opacity: 1;
 }
 
-.label {
-  margin-bottom: 1rem;
+@media only screen and (min-width: 780px) {
+  .position-lock {
+    position: fixed !important;
+    -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
 }
 
 @media only screen and (max-width: 780px) {
@@ -303,7 +311,7 @@ body {
     margin-bottom: -2.3rem;
   }
   .affix {
-        position: static;
+        position: relative;
   }
   .contact-details .detail {
     margin-top: -0.25rem;
