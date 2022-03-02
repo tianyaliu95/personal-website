@@ -108,7 +108,7 @@ export async function getServerSideProps ({ req, res, query }) {
               </section>
               <section class="col-md-9 card-wrapper pull-right end-of-page">
                   <div class="card background-card">
-                      <h4 class="text-bolder"><a class="underline" href="/resume.pdf">
+                      <h4 class="text-bolder"><a class="underline" target="_blank" href="/resume.pdf">
                           <i class="fa fa-lg fa-hand-o-right"></i> &nbsp;RESUME - TIANYA LIU</a>
                       </h4>
                       <hr>
