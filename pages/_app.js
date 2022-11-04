@@ -6,24 +6,31 @@ function MyApp({ Component, pageProps }) {
       <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-155298612-1" strategy="beforeInteractive" />
       <Script
         strategy="beforeInteractive"
-        onLoad={() => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', 'UA-155298612-1');
-        }} 
+            gtag('config', 'UA-155298612-1');
+          `
+        }}
       />
 
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-70DBW1V0HN" strategy="beforeInteractive" />
       <Script
         strategy="beforeInteractive"
-        onLoad={() => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', 'G-70DBW1V0HN');
+            gtag('config', 'G-70DBW1V0HN');
+          `
+        }}
+        onLoad={() => {
+          
         }} 
       />
 
