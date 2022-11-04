@@ -1,22 +1,10 @@
 import Head from 'next/head'
-import Script from 'next/script'
 
 export default function Home({ html }) {
 
   return (
     <div>
-      <Head>
-				<Script async src="https://www.googletagmanager.com/gtag/js?id=G-70DBW1V0HN" />
-				<Script
-					onLoad={() => {
-						window.dataLayer = window.dataLayer || [];
-						function gtag(){dataLayer.push(arguments);}
-						gtag('js', new Date());
-
-						gtag('config', 'G-70DBW1V0HN');
-					}} 
-				/>
-					
+      <Head>					
         <title>Tianya Liu</title>
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
