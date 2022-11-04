@@ -1,10 +1,22 @@
 import Head from 'next/head'
+import Script from 'next/script'
 
 export default function Home({ html }) {
 
   return (
     <div>
       <Head>
+				<Script async src="https://www.googletagmanager.com/gtag/js?id=G-70DBW1V0HN" />
+				<Script
+					onLoad={() => {
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', 'G-70DBW1V0HN');
+					}} 
+				/>
+					
         <title>Tianya Liu</title>
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
@@ -20,7 +32,7 @@ export default function Home({ html }) {
 }
 
 export async function getServerSideProps ({ req, res, query }) {
-  // TODO Update index page
+  // TODO - Update index page
   const html = `<!DOCTYPE html>
   <html lang="en">
   
@@ -69,7 +81,7 @@ export async function getServerSideProps ({ req, res, query }) {
                                       <i class="fa fa-lg fa-location-arrow"></i>
                                   </span>
                                   <span class="info">
-                                      Canada
+                                      Toronto / Bay Area
                                   </span>
                               </div>
                               <!-- <div class="detail">
@@ -118,9 +130,9 @@ export async function getServerSideProps ({ req, res, query }) {
                               <div class="info">
                                   <h4 class="title text-uppercase">About Me</h4>
                                   <div class="content about-me">
-                                      <p> I graduated from the University of Waterloo, with a master's degree in mechatronics engineering.</p> 
-                                      <p> I'm super passionate about software development and enjoy every second that I'm learning different new technologies.</p>
-                                      <p> Currently I'm switching my gears from a mechanical designer to become a full-time software engineer and open to any new opportunities!</p>
+                                      <p> Graduated from the University of Waterloo, with a master's degree in mechatronics engineering </p>
+                                      <p> Currently working at <a href="https://www.linkedin.com/company/harry-rosen/" target="_blank" style="font-weight: 600">Harry Rosen Inc.</a> as a software engineer focusing on full-stack web & mobile app development </p> 
+                                      <p> Super passionate about software development and enjoy every second learning cutting-edge technologies </p>
                                       <p> You only live once, so make it count!   </p>
                                   </div>
                               </div>
@@ -129,56 +141,64 @@ export async function getServerSideProps ({ req, res, query }) {
                           <div class="detail">
                               <div class="icon"><i class="fa fa-lg fa-briefcase"></i></div>
                               <div class="info">
-                                  <h4 class="title">PROJECTS EXPERIENCE &nbsp;(click to view!)</h4>
+                                  <h4 class="title">PROJECTS &nbsp;(click to view!)</h4>
                                   <ul class="list-unstyled">
                                       <li class="card card-nested clearfix">
                                           <div class="content work-experience">
   
-                                              <br/>
-                                              <p><a class="underline" href="https://github.com/tianyaliu95/OnlineBookstore"><i class="fa fa-lg fa-book"></i> &nbsp;&nbsp;<strong>Taomazon – E-Commerce Online Bookstore</strong></p></a>
-                                              <ul>
-                                                  <li> Designed and built a <b>MERN (MongoDB, Express, React, Node.js)</b> stack based web application supporting item search, filtering, product recommandations, and order tracking </li>
-                                                  <li> Developed an interactive front-end user interface using <b>React</b> and Bootstrap</li>
-                                                  <li> Built <b>RESTful</b> back-end APIs with Express and Node.js and utilized MongoDB database to store inventory information, user profiles and purchase history</li>
-                                                  <li> Implemented role-based access control (admin/user) allowing admin to perform CRUD operation</li>
-                                                  <li> Integrated <b>Braintree</b> API for payment processing and deployed server side to <b>DigitalOcean</b> cloud server</li>
-                                              </ul>
-                                              <br />
-  
-                                              <p><a class="underline" href="https://github.com/tianyaliu95/VisualRecognitionApp"><i class="fa fa-lg fa-android"></i> &nbsp;&nbsp;<strong>VizAssistant – Android Optical Character Recognition (OCR) App</strong></a></p>
-                                              <ul>
-                                                  <li> Developed an accessible <b>Android</b> app to assist the blind with daily reading tasks by converting images to voice messages through Google OCR engine and Android TalkBack</li>  
-                                                  <li> Built Google Cloud Vision OCR service and deployed to Google Compute Engine Virtual Machine with <b>Docker</b></li>
-                                                  <li> Implemented image uploading and JSON response parsing with multithreading on Android</li>                                        
-                                                  <li> Conducted unit testing using <b>Robolectric</b> and integration testing using <b>Espresso</b></li>
-                                                                                                                                
-                                              </ul>
-                                              <br />
-  
-                                              <p><a class="underline" href="https://github.com/tianyaliu95/StatsNBA"><i class="fa fa-lg  fa-dribbble"></i> &nbsp;&nbsp;<strong>StatsNBA - NBA Player Statistics Visualization</strong></p></a>
-                                              <ul>
-                                                  <li> Developed a web app using <b>React</b>, <b>D3</b>, and <b>Ant Design</b> to visualize over 400 NBA players’ shot data, including both player profile view and shot charts</li>
-                                                  <li> Fetched all players' data from NBA API by stats.nba.com</li>
-                                                  <li> Integrated shot frequency filters and 2 shot themes (hexbin and scatter) to provide more customized options of data visualization </li>
-                                                  <li> Created an autocomplete player search bar providing a suggestion list of players with both names and profile pictures</li>
-                                              </ul>
-                                              <br />
-  
-                                              <p><a class="underline" href="https://github.com/tianyaliu95"><i class="fa fa-lg  fa-comment-o"></i> &nbsp;&nbsp;<strong>RVers - Online RV Parks Review Platform</strong></p></a>
-                                              <ul>
-                                                  <li> Designed and implemented an RV parks review website with CRUD features including browsing all user submitted reviews, rating parks, leaving comments, and share users' own RV park experience (HTML/CSS/Javascript)</li>
-                                                  <li> Created Java servlets with <b>RESTful</b> APIs to handle HTTP requests and responses</li>
-                                                  <li> Implemented relational database schema using <b>MySQL</b> to store all users’ data</li>
-                                                  <li> Improved user interface by integrating <b>Google Map</b> API to display location of each reviewed park</li>
-                                              </ul>
-                                              <br />
-  
-                                              <p><a class="underline" href="https://github.com/tianyaliu95"><i class="fa fa-lg fa-gamepad"></i> &nbsp;&nbsp;<strong>Unity Platformer Game</strong></p></a>
-                                              <ul>
-                                                  <li> Designed a 2D platformer game with interactive game interface for fighting and item collection</li>
-                                                  <li> Utilized object pooling to minimize resource overhead by pre-instantiating all game entities</li>
-                                              </ul>
-                                              <br />
+                                            <br/>
+                                            <p><a class="underline" href="https://xingzhefangche.com" target="_blank"><i class="fa fa-lg fa-truck"></i> &nbsp;&nbsp;<strong>XingzheRV Official Website - 南京行者房车营地官方网站</strong></p></a>
+                                            <ul>
+                                                <li> Designed and developed a <b>NextJS</b> based web application for XingzheRV, a family-owned RV campground in Nanjing, China</li>
+                                                <li> Built responsive user interface supporting content management and user subscriptions</li>
+                                                <li> More coming soon!</li>
+                                            </ul>
+
+                                            <br/>
+                                            <p><a class="underline" href="https://github.com/tianyaliu95/OnlineBookstore" target="_blank"><i class="fa fa-lg fa-book"></i> &nbsp;&nbsp;<strong>Taomazon – E-Commerce Online Bookstore</strong></p></a>
+                                            <ul>
+                                                <li> Designed and built a <b>MERN (MongoDB, Express, React, Node.js)</b> stack based web application supporting item search, filtering, product recommandations, and order tracking </li>
+                                                <li> Developed an interactive front-end user interface using <b>React</b> and Bootstrap</li>
+                                                <li> Built <b>RESTful</b> back-end APIs with Express and Node.js and utilized MongoDB database to store inventory information, user profiles and purchase history</li>
+                                                <li> Implemented role-based access control (admin/user) allowing admin to perform CRUD operation</li>
+                                                <li> Integrated <b>Braintree</b> API for payment processing and deployed server side to <b>DigitalOcean</b> cloud server</li>
+                                            </ul>
+                                            <br />
+
+                                            <p><a class="underline" href="https://github.com/tianyaliu95/VisualRecognitionApp" target="_blank"><i class="fa fa-lg fa-android"></i> &nbsp;&nbsp;<strong>VizAssistant – Android Optical Character Recognition (OCR) App</strong></a></p>
+                                            <ul>
+                                                <li> Developed an accessible <b>Android</b> app to assist the blind with daily reading tasks by converting images to voice messages through Google OCR engine and Android TalkBack</li>  
+                                                <li> Built Google Cloud Vision OCR service and deployed to Google Compute Engine Virtual Machine with <b>Docker</b></li>
+                                                <li> Implemented image uploading and JSON response parsing with multithreading on Android</li>                                        
+                                                <li> Conducted unit testing using <b>Robolectric</b> and integration testing using <b>Espresso</b></li>
+                                                                                                                            
+                                            </ul>
+                                            <br />
+
+                                            <p><a class="underline" href="https://github.com/tianyaliu95/StatsNBA" target="_blank"><i class="fa fa-lg  fa-dribbble"></i> &nbsp;&nbsp;<strong>StatsNBA - NBA Player Statistics Visualization</strong></p></a>
+                                            <ul>
+                                                <li> Developed a web app using <b>React</b>, <b>D3</b>, and <b>Ant Design</b> to visualize over 400 NBA players’ shot data, including both player profile view and shot charts</li>
+                                                <li> Fetched all players' data from NBA API by stats.nba.com</li>
+                                                <li> Integrated shot frequency filters and 2 shot themes (hexbin and scatter) to provide more customized options of data visualization </li>
+                                                <li> Created an autocomplete player search bar providing a suggestion list of players with both names and profile pictures</li>
+                                            </ul>
+                                            <br />
+
+                                            <p><a class="underline" href="https://github.com/tianyaliu95" target="_blank"><i class="fa fa-lg  fa-comment-o"></i> &nbsp;&nbsp;<strong>RVers - Online RV Parks Review Platform</strong></p></a>
+                                            <ul>
+                                                <li> Designed and implemented an RV parks review website with CRUD features including browsing all user submitted reviews, rating parks, leaving comments, and share users' own RV park experience (HTML/CSS/Javascript)</li>
+                                                <li> Created Java servlets with <b>RESTful</b> APIs to handle HTTP requests and responses</li>
+                                                <li> Implemented relational database schema using <b>MySQL</b> to store all users’ data</li>
+                                                <li> Improved user interface by integrating <b>Google Map</b> API to display location of each reviewed park</li>
+                                            </ul>
+                                            <br />
+
+                                            <p><a class="underline" href="https://github.com/tianyaliu95" target="_blank"><i class="fa fa-lg fa-gamepad"></i> &nbsp;&nbsp;<strong>Unity Platformer Game</strong></p></a>
+                                            <ul>
+                                                <li> Designed a 2D platformer game with interactive game interface for fighting and item collection</li>
+                                                <li> Utilized object pooling to minimize resource overhead by pre-instantiating all game entities</li>
+                                            </ul>
+                                            <br />
   
                                           </div>
                                       </li>
