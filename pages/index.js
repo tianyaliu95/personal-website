@@ -4,7 +4,9 @@ export default function Home({ html }) {
 
   return (
     <div>
-      <Head>					
+      <Head>
+				<script type='text/javascript' src='/analytics/tracking.js' />
+
         <title>Tianya Liu</title>
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
