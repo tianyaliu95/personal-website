@@ -1,6 +1,25 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
+
+import { Lightbox } from 'react-modal-image'
 
 export default function Home({ html }) {
+	const [isModalOpen, setModalOpen] = useState(false)
+
+	const openModal = () => {
+		setModalOpen(true)
+		window.dataLayer && window.dataLayer.push({
+			'ImageView': 'AVATAR'
+		})
+	}
+
+	const closeModal = () => {
+		setModalOpen(false)
+	}
+
+	useEffect(() => {
+		document.getElementById('avatar').addEventListener('click', openModal)
+	})
 
   return (
     <div>
@@ -9,6 +28,12 @@ export default function Home({ html }) {
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
       </Head>
+
+			{isModalOpen && 
+				<Lightbox
+					large={'/img/avatar.jpg'}
+					onClose={closeModal}
+				/>}
 
       <div
         dangerouslySetInnerHTML={{
@@ -21,7 +46,8 @@ export default function Home({ html }) {
 
 export async function getServerSideProps ({ req, res, query }) {
   // TODO - Update index page
-  const html = `<!DOCTYPE html>
+  const html = `
+	<!DOCTYPE html>
   <html lang="en">
   
   <head>
@@ -38,25 +64,15 @@ export async function getServerSideProps ({ req, res, query }) {
       <link rel="stylesheet" href="./style.css">
   </head>
   
-  <body id="snow">
-  <!--     <script>
-      window.onload = function () {
-          $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-          $( ".js-tooltip" ).tooltip();
-      }
-  
-      $(document).ready( function(){
-          $.fn.snow();
-      });
-      </script> -->
+  <body>
       <div class="container-fluid">
           <div class="row main clearfix">
               <section class="col-md-3 card-wrapper position-lock">
                   <div class="card profile-card">
                       <div class="profile-pic">
-                          <img class="media-object img-circle center-block" data-src="holder.js/64x64"
-                                  alt="64x64" src="./img/avatar.jpg" style="width: 160px; height: 160px;">
-                          </div>
+                          <img id="avatar" class="media-object img-circle center-block" data-src="holder.js/64x64"
+														alt="64x64" src="./img/avatar.jpg" style="width: 160px; height: 160px; cursor: pointer">
+											</div>
                           
                           <h3 class="text-center text-bolder" style="line-height:2;">Jay Tianya Liu</h3>
                           <h5 class="text-muted text-center">Software Engineer</h5>
