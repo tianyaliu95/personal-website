@@ -9,7 +9,8 @@ export default function Home({ html }) {
 	const openModal = () => {
 		setModalOpen(true)
 		window.dataLayer && window.dataLayer.push({
-			'ImageView': 'AVATAR'
+			'event': 'IMAGE_VIEW',
+            'time_stamp': `${new Date()}`
 		})
 	}
 
@@ -17,8 +18,24 @@ export default function Home({ html }) {
 		setModalOpen(false)
 	}
 
+    const onResumeClick = () => {
+	    window.dataLayer && window.dataLayer.push({
+			'event': 'RESUME_VIEW',
+            'time_stamp': `${new Date()}`
+		})
+	}
+
+    const onXingzheClick = () => {
+	    window.dataLayer && window.dataLayer.push({
+			'event': 'XINGZHEFANGCHE_VIEW',
+            'time_stamp': `${new Date()}`
+		})
+	}
+
 	useEffect(() => {
 		document.getElementById('avatar').addEventListener('click', openModal)
+        document.getElementById('resume').addEventListener('click', onResumeClick)
+        document.getElementById('xingzhefangche').addEventListener('click', onXingzheClick)
 	})
 
   return (
@@ -123,7 +140,7 @@ export async function getServerSideProps ({ req, res, query }) {
               </section>
               <section class="col-md-9 card-wrapper pull-right end-of-page">
                   <div class="card background-card">
-                      <h4 class="text-bolder"><a class="underline" target="_blank" href="/resume.pdf">
+                      <h4 class="text-bolder"><a id="resume" class="underline" target="_blank" href="/resume.pdf">
                           <i class="fa fa-lg fa-hand-o-right"></i> &nbsp;RESUME - TIANYA LIU</a>
                       </h4>
                       <hr>
@@ -150,7 +167,7 @@ export async function getServerSideProps ({ req, res, query }) {
                                           <div class="content work-experience">
   
                                             <br/>
-                                            <p><a class="underline" href="https://xingzhefangche.com" target="_blank"><i class="fa fa-lg fa-truck"></i> &nbsp;&nbsp;<strong>XingzheRV Official Website - 南京行者房车营地官方网站</strong></p></a>
+                                            <p><a id="xingzhefangche" class="underline" href="https://xingzhefangche.com" target="_blank"><i class="fa fa-lg fa-truck"></i> &nbsp;&nbsp;<strong>XingzheRV Official Website - 南京行者房车营地官方网站</strong></p></a>
                                             <ul>
                                                 <li> Designed and developed a <b>NextJS</b> based web application for XingzheRV, a family-owned RV campground in Nanjing, China</li>
                                                 <li> Built responsive user interface supporting content management and email subscriptions</li>
