@@ -33,9 +33,9 @@ export default function Home({ html }) {
 	}
 
 	useEffect(() => {
-		document.getElementById('avatar').addEventListener('click', openModal)
-        document.getElementById('resume').addEventListener('click', onResumeClick)
-        document.getElementById('xingzhefangche').addEventListener('click', onXingzheClick)
+		document.getElementById('avatar')?.addEventListener('click', openModal)
+        document.getElementById('resume')?.addEventListener('click', onResumeClick)
+        document.getElementById('xingzhefangche')?.addEventListener('click', onXingzheClick)
 	})
 
   return (
@@ -64,7 +64,7 @@ export default function Home({ html }) {
 export async function getServerSideProps ({ req, res, query }) {
   // TODO - Update index page
   const html = `
-	<!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
   
   <head>
@@ -88,61 +88,61 @@ export async function getServerSideProps ({ req, res, query }) {
                   <div class="card profile-card">
                       <div class="profile-pic">
                           <img id="avatar" class="media-object img-circle center-block" data-src="holder.js/64x64"
-														alt="64x64" src="./img/avatar.jpg" style="width: 160px; height: 160px; cursor: pointer">
-											</div>
-                          
-                          <h3 class="text-center text-bolder" style="line-height:2;">Jay Tianya Liu</h3>
-                          <h5 class="text-muted text-center">Software Engineer</h5>
-                          <h5 class="text-muted text-center">Mechanical Designer</h5>
-                          <hr>
-                          <div class="contact-details clearfix">
-                              <div class="detail">
-                                  <span class="icon">
-                                      <i class="fa fa-lg fa-location-arrow"></i>
-                                  </span>
-                                  <span class="info">
-                                      Toronto / Bay Area
-                                  </span>
-                              </div>
-                              <!-- <div class="detail">
-                                  <span class="icon">
-                                      <i class="fa fa-lg fa-phone"></i>
-                                  </span>
-                                  <span class="info">
-                                      +1 (647) 920-2596
-                                  </span>
-                              </div> -->
-                              <div class="detail">
-                                  <span class="icon">
-                                      <i class="fa fa-lg fa-envelope"></i>
-                                  </span>
-                                  <span class="info">
-                                      <a href="mailto:tianyaliu1995@gmail.com">tianyaliu1995@gmail.com</a>
-                                  </span>
-                              </div>
-                              <div class="detail">
-                                  <span class="icon" title="Languages I speak">
-                                      <i class="fa fa-lg fa-language"></i>
-                                  </span>
-                                  <span class="info">
-                                      English & Mandarin
-                                  </span>
-                              </div>
+                              alt="64x64" src="./img/avatar.jpg" style="width: 160px; height: 160px; cursor: pointer">
+                      </div>
+  
+                      <h3 class="text-center text-bolder" style="line-height:2;">Jay Tianya Liu</h3>
+                      <h5 class="text-muted text-center">Software Engineer</h5>
+                      <h5 class="text-muted text-center">Mechanical Designer</h5>
+                      <hr>
+                      <div class="contact-details clearfix">
+                          <div class="detail">
+                              <span class="icon">
+                                  <i class="fa fa-lg fa-location-arrow"></i>
+                              </span>
+                              <span class="info">
+                                  Toronto / Bay Area / Vancouver
+                              </span>
                           </div>
-                          <hr>
-                          <div class="social-links text-center">
-                              <a class="fa fa-linkedin fa-2x social-link link-linkedin"
-                                  href="https://ca.linkedin.com/in/tianya-liu-887905104" target="_blank"></a>&nbsp;&nbsp;
-                              <a href="https://github.com/tianyaliu95" target="_blank">
-                                  <img class="github-icon link-github" src="./img/github.gif" type="image/gif"/></a>
+                          <!-- <div class="detail">
+                                      <span class="icon">
+                                          <i class="fa fa-lg fa-phone"></i>
+                                      </span>
+                                      <span class="info">
+                                          +1 (647) 920-2596
+                                      </span>
+                                  </div> -->
+                          <div class="detail">
+                              <span class="icon">
+                                  <i class="fa fa-lg fa-envelope"></i>
+                              </span>
+                              <span class="info">
+                                  <a href="mailto:tianyaliu1995@gmail.com">tianyaliu1995@gmail.com</a>
+                              </span>
+                          </div>
+                          <div class="detail">
+                              <span class="icon" title="Languages I speak">
+                                  <i class="fa fa-lg fa-language"></i>
+                              </span>
+                              <span class="info">
+                                  English & Mandarin
+                              </span>
                           </div>
                       </div>
+                      <hr>
+                      <div class="social-links text-center">
+                          <a class="fa fa-linkedin fa-2x social-link link-linkedin"
+                              href="https://ca.linkedin.com/in/tianya-liu-887905104" target="_blank"></a>&nbsp;&nbsp;
+                          <a href="https://github.com/tianyaliu95" target="_blank">
+                              <img class="github-icon link-github" src="./img/github.gif" type="image/gif" /></a>
+                      </div>
+                  </div>
               </section>
               <section class="col-md-9 card-wrapper pull-right end-of-page">
                   <div class="card background-card">
-                      <h4 class="text-bolder"><a id="resume" class="underline" target="_blank" href="/resume.pdf">
-                          <i class="fa fa-lg fa-hand-o-right"></i> &nbsp;RESUME - TIANYA LIU</a>
-                      </h4>
+                      <!-- <h4 class="text-bolder"><a id="resume" class="underline" target="_blank" href="/resume.pdf">
+                              <i class="fa fa-lg fa-hand-o-right"></i> &nbsp;RESUME - TIANYA LIU</a>
+                      </h4> -->
                       <hr>
                       <div class="background-details">
                           <div class="detail about-me-title">
@@ -150,10 +150,14 @@ export async function getServerSideProps ({ req, res, query }) {
                               <div class="info">
                                   <h4 class="title text-uppercase">About Me</h4>
                                   <div class="content about-me">
-                                      <p> Graduated from the University of Waterloo, with a master's degree in mechatronics engineering </p>
-                                      <p> Currently working at <a href="https://www.linkedin.com/company/harry-rosen/" target="_blank" style="font-weight: 600">Harry Rosen Inc.</a> as a software engineer focusing on full-stack web & mobile app development </p> 
-                                      <p> Super passionate about software development and enjoy every second learning cutting-edge technologies </p>
-                                      <p> You only live once, so make it count!   </p>
+                                      <p> Graduated from the University of Waterloo, with a master's degree in
+                                          mechatronics engineering </p>
+                                      <p> Currently working at <a href="https://www.linkedin.com/company/harry-rosen/"
+                                              target="_blank" style="font-weight: 600">Harry Rosen Inc.</a> as a software
+                                          engineer focusing on full-stack web & mobile app development </p>
+                                      <p> Super passionate about software development and enjoy every second learning
+                                          cutting-edge technologies </p>
+                                      <p> You only live once, so make it count! </p>
                                   </div>
                               </div>
                           </div>
@@ -166,60 +170,107 @@ export async function getServerSideProps ({ req, res, query }) {
                                       <li class="card card-nested clearfix">
                                           <div class="content work-experience">
   
-                                            <br/>
-                                            <p><a id="xingzhefangche" class="underline" href="https://xingzhefangche.com" target="_blank"><i class="fa fa-lg fa-truck"></i> &nbsp;&nbsp;<strong>XingzheRV Official Website - 南京行者房车营地官方网站</strong></p></a>
-                                            <ul>
-                                                <li> Designed and developed a <b>NextJS</b> based web application for XingzheRV, a family-owned RV campground in Nanjing, China</li>
-                                                <li> Built responsive user interface supporting content management and email subscriptions</li>
-																								<li> Integrated <b>Google Tag Manager</b> and <b>Google Analytics</b> allowing real-time user activity tracking on the site</li>
-                                                <li> More coming soon!</li>
-                                            </ul>
-
-                                            <br/>
-                                            <p><a class="underline" href="https://github.com/tianyaliu95/OnlineBookstore" target="_blank"><i class="fa fa-lg fa-book"></i> &nbsp;&nbsp;<strong>Taomazon – E-Commerce Online Bookstore</strong></p></a>
-                                            <ul>
-                                                <li> Designed and built a <b>MERN (MongoDB, Express, React, Node.js)</b> stack based web application supporting item search, filtering, product recommandations, and order tracking </li>
-                                                <li> Developed an interactive front-end user interface using <b>React</b> and Bootstrap</li>
-                                                <li> Built <b>RESTful</b> back-end APIs with Express and Node.js and utilized MongoDB database to store inventory information, user profiles and purchase history</li>
-                                                <li> Implemented role-based access control (admin/user) allowing admin to perform CRUD operation</li>
-                                                <li> Integrated <b>Braintree</b> API for payment processing and deployed server side to <b>DigitalOcean</b> cloud server</li>
-                                            </ul>
-                                            <br />
-
-                                            <p><a class="underline" href="https://github.com/tianyaliu95/VisualRecognitionApp" target="_blank"><i class="fa fa-lg fa-android"></i> &nbsp;&nbsp;<strong>VizAssistant – Android Optical Character Recognition (OCR) App</strong></a></p>
-                                            <ul>
-                                                <li> Developed an accessible <b>Android</b> app to assist the blind with daily reading tasks by converting images to voice messages through Google OCR engine and Android TalkBack</li>  
-                                                <li> Built Google Cloud Vision OCR service and deployed to Google Compute Engine Virtual Machine with <b>Docker</b></li>
-                                                <li> Implemented image uploading and JSON response parsing with multithreading on Android</li>                                        
-                                                <li> Conducted unit testing using <b>Robolectric</b> and integration testing using <b>Espresso</b></li>
-                                                                                                                            
-                                            </ul>
-                                            <br />
-
-                                            <p><a class="underline" href="https://github.com/tianyaliu95/StatsNBA" target="_blank"><i class="fa fa-lg  fa-dribbble"></i> &nbsp;&nbsp;<strong>StatsNBA - NBA Player Statistics Visualization</strong></p></a>
-                                            <ul>
-                                                <li> Developed a web app using <b>React</b>, <b>D3</b>, and <b>Ant Design</b> to visualize over 400 NBA players’ shot data, including both player profile view and shot charts</li>
-                                                <li> Fetched all players' data from NBA API by stats.nba.com</li>
-                                                <li> Integrated shot frequency filters and 2 shot themes (hexbin and scatter) to provide more customized options of data visualization </li>
-                                                <li> Created an autocomplete player search bar providing a suggestion list of players with both names and profile pictures</li>
-                                            </ul>
-                                            <br />
-
-                                            <p><a class="underline" href="https://github.com/tianyaliu95" target="_blank"><i class="fa fa-lg  fa-comment-o"></i> &nbsp;&nbsp;<strong>RVers - Online RV Parks Review Platform</strong></p></a>
-                                            <ul>
-                                                <li> Designed and implemented an RV parks review website with CRUD features including browsing all user submitted reviews, rating parks, leaving comments, and share users' own RV park experience (HTML/CSS/Javascript)</li>
-                                                <li> Created Java servlets with <b>RESTful</b> APIs to handle HTTP requests and responses</li>
-                                                <li> Implemented relational database schema using <b>MySQL</b> to store all users’ data</li>
-                                                <li> Improved user interface by integrating <b>Google Map</b> API to display location of each reviewed park</li>
-                                            </ul>
-                                            <br />
-
-                                            <p><a class="underline" href="https://github.com/tianyaliu95" target="_blank"><i class="fa fa-lg fa-gamepad"></i> &nbsp;&nbsp;<strong>Unity Platformer Game</strong></p></a>
-                                            <ul>
-                                                <li> Designed a 2D platformer game with interactive game interface for fighting and item collection</li>
-                                                <li> Utilized object pooling to minimize resource overhead by pre-instantiating all game entities</li>
-                                            </ul>
-                                            <br />
+                                              <br />
+                                              <p><a id="xingzhefangche" class="underline"
+                                                      href="https://xingzhefangche.com" target="_blank"><i
+                                                          class="fa fa-lg fa-truck"></i> &nbsp;&nbsp;<strong>Nanjing XingzheRV
+                                                          Official Website - 南京行者房车营地官方网站</strong></p></a>
+                                              <ul>
+                                                  <li> Designed and developed a <b>NextJS</b> based web application for
+                                                      XingzheRV, a family-owned RV campground in Nanjing, China</li>
+                                                  <li> Built responsive user interface supporting content management and
+                                                      email subscriptions</li>
+                                                  <li> Integrated <b>Google Analytics</b>
+                                                      allowing real-time user activity and behavior tracking across the site</li>
+                                                  <li> More coming soon!</li>
+                                              </ul>
+  
+                                              <br />
+                                              <p><a class="underline"
+                                                      href="https://github.com/tianyaliu95/OnlineBookstore"
+                                                      target="_blank"><i class="fa fa-lg fa-book"></i>
+                                                      &nbsp;&nbsp;<strong>Taobuy – E-Commerce Online Bookstore</strong>
+                                              </p></a>
+                                              <ul>
+                                                  <li> Designed and built a <b>MERN (MongoDB, Express, React, Node.js)</b>
+                                                      stack based web application supporting item search, filtering,
+                                                      product recommandations, and order tracking </li>
+                                                  <li> Developed an interactive front-end user interface using
+                                                      <b>React</b> and Bootstrap</li>
+                                                  <li> Built <b>RESTful</b> back-end APIs with Express and Node.js and
+                                                      utilized MongoDB database to store inventory information, user
+                                                      profiles and purchase history</li>
+                                                  <li> Implemented role-based access control (admin/user) allowing admin
+                                                      to perform CRUD operation</li>
+                                                  <li> Integrated <b>Braintree</b> API for payment processing and deployed
+                                                      server side to <b>DigitalOcean</b> cloud server</li>
+                                              </ul>
+                                              <br />
+  
+                                              <p><a class="underline"
+                                                      href="https://github.com/tianyaliu95/VisualRecognitionApp"
+                                                      target="_blank"><i class="fa fa-lg fa-android"></i>
+                                                      &nbsp;&nbsp;<strong>VizAssistant – Android Optical Character
+                                                          Recognition (OCR) App</strong></a></p>
+                                              <ul>
+                                                  <li> Developed an accessible <b>Android</b> app to assist the blind with
+                                                      daily reading tasks by converting images to voice messages through
+                                                      Google OCR engine and Android TalkBack</li>
+                                                  <li> Built Google Cloud Vision OCR service and deployed to Google
+                                                      Compute Engine Virtual Machine with <b>Docker</b></li>
+                                                  <li> Implemented image uploading and JSON response parsing with
+                                                      multithreading on Android</li>
+                                                  <li> Conducted unit testing using <b>Robolectric</b> and integration
+                                                      testing using <b>Espresso</b></li>
+  
+                                              </ul>
+                                              <br />
+  
+                                              <p><a class="underline" href="https://github.com/tianyaliu95/StatsNBA"
+                                                      target="_blank"><i class="fa fa-lg  fa-dribbble"></i>
+                                                      &nbsp;&nbsp;<strong>StatsNBA - NBA Player Statistics
+                                                          Visualization</strong></p></a>
+                                              <ul>
+                                                  <li> Developed a web app using <b>React</b>, <b>D3</b>, and <b>Ant
+                                                          Design</b> to visualize over 400 NBA players’ shot data,
+                                                      including both player profile view and shot charts</li>
+                                                  <li> Fetched all players' data from NBA API by stats.nba.com</li>
+                                                  <li> Integrated shot frequency filters and 2 shot themes (hexbin and
+                                                      scatter) to provide more customized options of data visualization
+                                                  </li>
+                                                  <li> Created an autocomplete player search bar providing a suggestion
+                                                      list of players with both names and profile pictures</li>
+                                              </ul>
+                                              <br />
+  
+                                              <p><a class="underline" href="https://github.com/tianyaliu95"
+                                                      target="_blank"><i class="fa fa-lg  fa-comment-o"></i>
+                                                      &nbsp;&nbsp;<strong>RVers - Online RV Parks Review Platform</strong>
+                                              </p></a>
+                                              <ul>
+                                                  <li> Designed and implemented an RV parks review website with CRUD
+                                                      features including browsing all user submitted reviews, rating
+                                                      parks, leaving comments, and share users' own RV park experience
+                                                      (HTML/CSS/Javascript)</li>
+                                                  <li> Created Java servlets with <b>RESTful</b> APIs to handle HTTP
+                                                      requests and responses</li>
+                                                  <li> Implemented relational database schema using <b>MySQL</b> to store
+                                                      all users’ data</li>
+                                                  <li> Improved user interface by integrating <b>Google Map</b> API to
+                                                      display location of each reviewed park</li>
+                                              </ul>
+                                              <br />
+  
+                                              <p><a class="underline" href="https://github.com/tianyaliu95"
+                                                      target="_blank"><i class="fa fa-lg fa-gamepad"></i>
+                                                      &nbsp;&nbsp;<strong>Unity Platformer Game</strong></p></a>
+                                              <ul>
+                                                  <li> Designed a 2D platformer game with interactive game interface for
+                                                      fighting and item collection</li>
+                                                  <li> Utilized object pooling to minimize resource overhead by
+                                                      pre-instantiating all game entities</li>
+                                              </ul>
+                                              <br />
   
                                           </div>
                                       </li>
@@ -240,8 +291,9 @@ export async function getServerSideProps ({ req, res, query }) {
                                               <div class="skill-info">
                                                   <strong>Languages</strong>
                                                   <div class="space-top labels">
-                                                      <span class="label label-keyword">Java</span>
                                                       <span class="label label-keyword">JavaScript</span>
+                                                      <span class="label label-keyword">TypeScript</span>
+                                                      <span class="label label-keyword">SQL</span>
                                                       <span class="label label-keyword">C#</span>
                                                   </div>
                                               </div>
@@ -258,12 +310,12 @@ export async function getServerSideProps ({ req, res, query }) {
                                                       <span class="label label-keyword">NodeJS</span>
                                                       <span class="label label-keyword">Jest</span>
                                                       <span class="label label-keyword">Express</span>
+                                                      <span class="label label-keyword">RESTful</span>
+                                                      <span class="label label-keyword">GraphQL</span>
                                                       <span class="label label-keyword">HTML</span>
                                                       <span class="label label-keyword">CSS</span>
                                                       <span class="label label-keyword">Bootstrap</span>
                                                       <span class="label label-keyword">jQuery</span>
-                                                      <span class="label label-keyword">RESTful</span>
-                                                      <span class="label label-keyword">GraphQL</span>
   
                                                   </div>
                                               </div>
@@ -289,12 +341,12 @@ export async function getServerSideProps ({ req, res, query }) {
                                                   <strong>Other</strong>
                                                   <div class="space-top labels">
                                                       <span class="label label-keyword">Git</span>
-                                                      <span class="label label-keyword">Android Studio</span>
-                                                      <span class="label label-keyword">Gradle</span>
                                                       <span class="label label-keyword">Google Cloud</span>
                                                       <span class="label label-keyword">Docker</span>
+                                                      <span class="label label-keyword">Android Studio</span>
+                                                      <span class="label label-keyword">Gradle</span>
                                                       <hr />
-                                                      
+  
                                                       <span class="label label-keyword">Visual Studio Code</span>
                                                       <span class="label label-keyword">Visual Studio</span>
                                                       <span class="label label-keyword">Sublime</span>
@@ -321,7 +373,7 @@ export async function getServerSideProps ({ req, res, query }) {
                                               </div>
                                           </li>
                                       </ul>
-                                      <br/>
+                                      <br />
                                   </div>
                               </div>
                           </div>
@@ -333,12 +385,17 @@ export async function getServerSideProps ({ req, res, query }) {
                                   <ul class="list-unstyled">
                                       <li class="card card-nested clearfix">
                                           <div class="content has-sidebar">
-                                              <p><strong>Engineering Specialist Intern</strong>,&nbsp;F&P Manufacturing Inc. </p>
+                                              <p><strong>Engineering Specialist Intern</strong>,&nbsp;F&P Manufacturing
+                                                  Inc. </p>
                                               <ul>
-                                                  <li> Worked within a multi-disciplinary team to design manufacturing equipment for Honda CR-V chassis main production line</li>
-                                                  <li> Led <b>3-D CAD</b> model development, testing, and prototyping process</li>
-                                                  <li> Conducted Failure Mode & Effects Analysis (<b>FMEA</b>) and initiated embodiment designs for safety and risk mitigation</li>
-                                                  <li> Liaised with external contractors and conceptualized integrated designs for continuous improvement</li>
+                                                  <li> Worked within a multi-disciplinary team to design manufacturing
+                                                      equipment for Honda CR-V chassis main production line</li>
+                                                  <li> Led <b>3-D CAD</b> model development, testing, and prototyping
+                                                      process</li>
+                                                  <li> Conducted Failure Mode & Effects Analysis (<b>FMEA</b>) and
+                                                      initiated embodiment designs for safety and risk mitigation</li>
+                                                  <li> Liaised with external contractors and conceptualized integrated
+                                                      designs for continuous improvement</li>
                                               </ul>
                                           </div>
                                           <div class="sidebar text-muted text-center">
@@ -352,13 +409,20 @@ export async function getServerSideProps ({ req, res, query }) {
                                   <ul class="list-unstyled">
                                       <li class="card card-nested clearfix">
                                           <div class="content has-sidebar">
-                                              <p><strong>Research Assistant</strong>,&nbsp;UW-Madison Engineering Representations & Simulation Lab (ERSL) </p>
+                                              <p><strong>Research Assistant</strong>,&nbsp;UW-Madison Engineering
+                                                  Representations & Simulation Lab (ERSL) </p>
                                               <ul>
-                                                  <li> Created 3-D SolidWorks models based on engineering drawings and achieved up to <b>30%</b> volumetric shrinkage through topology optimization</li>
-                                                  <li> Identified models’ limitations by performing finite element analysis (<b>FEA</b>) with various boundary conditions</li>
-                                                  <li> Assisted in 3-D manufacturing and prototyping process and conducted tension/compression tests</li>
-                                                  <li> Prepared verbal and written reports and presented in a regional technical meeting</li>
-                                                  <li> Evaluated software add-ins by analyzing results from 3-D models</li>
+                                                  <li> Created 3-D <b>SolidWorks</b> models based on engineering drawings and
+                                                      achieved up to <b>30%</b> volumetric shrinkage through topology
+                                                      optimization</li>
+                                                  <li> Identified models’ limitations by performing finite element
+                                                      analysis (<b>FEA</b>) with various boundary conditions</li>
+                                                  <li> Assisted in 3-D manufacturing and prototyping process and conducted
+                                                      tension/compression tests</li>
+                                                  <li> Prepared verbal and written reports and presented in a regional
+                                                      technical meeting</li>
+                                                  <li> Evaluated software add-ins by analyzing results from 3-D models
+                                                  </li>
                                               </ul>
                                           </div>
                                           <div class="sidebar text-muted text-center">
@@ -369,7 +433,7 @@ export async function getServerSideProps ({ req, res, query }) {
                                           </div>
                                       </li>
                                   </ul>
-                                  
+  
                               </div>
                           </div>
   
@@ -382,12 +446,13 @@ export async function getServerSideProps ({ req, res, query }) {
                                           <li class="card card-nested">
                                               <div class="content has-sidebar">
                                                   <p>
-                                                      <strong>Master of Engineering (M.Eng), Mechanical & Mechatronics Engineering</strong>,&nbsp;
-                                                      University of Waterloo 
-                                                      <ul>
-                                                          <li>Graduate Diploma in Design Engineering</li>
-                                                          <li>Certificate in Business and Entrepreneurship</li>
-                                                      </ul>
+                                                      <strong>Master of Engineering (M.Eng), Mechanical & Mechatronics
+                                                          Engineering</strong>,&nbsp;
+                                                      University of Waterloo
+                                                  <ul>
+                                                      <li>Graduate Diploma in Design Engineering</li>
+                                                      <li>Certificate in Business and Entrepreneurship</li>
+                                                  </ul>
                                                   </p>
                                               </div>
                                               <div class="sidebar text-muted text-center master-degree-duation">
@@ -397,23 +462,24 @@ export async function getServerSideProps ({ req, res, query }) {
                                           </li>
                                       </ul>
                                       <ul class="list-unstyled">
-                                      <li class="card card-nested clearfix">
-                                          <div class="content has-sidebar">
-                                              <p>
-                                                  <strong>Bechelor of Science, Mechanical Engineering</strong>,&nbsp;
-                                                  University of Wisconsin-Madison
+                                          <li class="card card-nested clearfix">
+                                              <div class="content has-sidebar">
+                                                  <p>
+                                                      <strong>Bechelor of Science, Mechanical Engineering</strong>,&nbsp;
+                                                      University of Wisconsin-Madison
                                                   <ul>
                                                       <li>Overall GPA: 3.6 / 4.0</li>
-                                                      <li>Achieved Dean’s List: Fall 2013 – Spring 2014, Spring 2015 – Spring 2017</li>
+                                                      <li>Achieved Dean’s List: Fall 2013 – Spring 2014, Spring 2015 –
+                                                          Spring 2017</li>
                                                   </ul>
-                                              </p>
-                                          </div>
-                                          <div class="sidebar text-muted text-center">
-                                              <br />  
-                                              <p>2013 - 2017</p>
-                                          </div>
-                                      </li>
-                                  </ul>
+                                                  </p>
+                                              </div>
+                                              <div class="sidebar text-muted text-center">
+                                                  <br />
+                                                  <p>2013 - 2017</p>
+                                              </div>
+                                          </li>
+                                      </ul>
                                   </div>
                               </div>
                           </div>
@@ -423,8 +489,8 @@ export async function getServerSideProps ({ req, res, query }) {
                               </div>
                               <div class="info">
                                   <h4 class="title text-uppercase">
-                                          Interests
-                                      </h4>
+                                      Interests
+                                  </h4>
                                   <div class="content">
                                       <ul class="list-unstyled">
                                           <li class="card card-nested">
@@ -448,8 +514,8 @@ export async function getServerSideProps ({ req, res, query }) {
                               </div>
                               <div class="info">
                                   <h4 class="title text-uppercase">
-                                          Other Random Stuff About Me!
-                                      </h4>
+                                      Other Random Stuff About Me!
+                                  </h4>
                                   <div class="content">
                                       <ul class="list-unstyled">
                                           <li class="card card-nested">
