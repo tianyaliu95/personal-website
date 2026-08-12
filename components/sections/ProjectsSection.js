@@ -30,7 +30,7 @@ export default function ProjectsSection() {
       <Project
         href="https://github.com/tianyaliu95/OnlineBookstore"
         icon={icons.bookOpen}
-        title="Taobuy – E-Commerce Online Bookstore"
+        title="E-Commerce Online Bookstore"
       >
         <li>
           Designed and built a <b>MERN (MongoDB, Express, React, Node.js)</b> stack based web application supporting item search, filtering,

@@ -361,15 +361,6 @@ b {
   align-items: start;
   color: var(--ink-soft);
   font-size: var(--fs-body);
-  padding: 6px 8px;
-  margin: 0 -8px;
-  border-radius: 10px;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.contact-item:hover {
-  background: rgba(31, 111, 181, 0.06);
-  transform: translateX(2px);
 }
 
 .contact-item svg {
@@ -522,6 +513,38 @@ b {
 
 .about-copy a:hover {
   background-size: 100% 1px;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--ink);
+  padding: 10px 14px;
+  margin: -4px -8px;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 111, 181, 0.18);
+  background: rgba(31, 111, 181, 0.06);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.resume-link:hover {
+  color: var(--ink);
+  background: rgba(31, 111, 181, 0.12);
+  border-color: rgba(31, 111, 181, 0.35);
+  transform: translateY(-1px);
+}
+
+.resume-link-icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+.resume-link-icon svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* —— Projects —— */

@@ -6,6 +6,7 @@ import AmbientField from '../components/effects/AmbientField'
 import BackToTop from '../components/effects/BackToTop'
 import ProfileSidebar from '../components/ProfileSidebar'
 import {
+  ResumeSection,
   AboutSection,
   ProjectsSection,
   SkillsSection,
@@ -40,6 +41,7 @@ export default function Home() {
         <ProfileSidebar onAvatarClick={() => setModalOpen(true)} />
 
         <main className="content">
+          <ResumeSection />
           <AboutSection />
           <ProjectsSection />
           <SkillsSection />

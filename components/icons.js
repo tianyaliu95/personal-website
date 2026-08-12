@@ -78,6 +78,18 @@ export const icons = {
       <path d="M4 19a2 2 0 0 1 2-2h13" />
     </Icon>
   ),
+  file: (
+    <Icon>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+    </Icon>
+  ),
+  arrowRight: (
+    <Icon>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </Icon>
+  ),
   external: (
     <Icon>
       <path d="M14 4h6v6M20 4 10 14M10 5H5a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-5" />
