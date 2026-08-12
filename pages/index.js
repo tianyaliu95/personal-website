@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { Lightbox } from 'react-modal-image'
 
+import AmbientField from '../components/effects/AmbientField'
+import BackToTop from '../components/effects/BackToTop'
 import ProfileSidebar from '../components/ProfileSidebar'
 import {
   AboutSection,
@@ -23,6 +25,9 @@ export default function Home() {
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
       </Head>
+
+      <AmbientField />
+      <BackToTop />
 
       {isModalOpen && (
         <Lightbox
