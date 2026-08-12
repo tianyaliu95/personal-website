@@ -1,85 +1,49 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
-
+import { useState } from 'react'
 import { Lightbox } from 'react-modal-image'
 
-export default function Home({ }) {
-  const [htmlFile, setHtmlFile] = useState()
-  const [isContentReady, setContentReady] = useState(false)
+import ProfileSidebar from '../components/ProfileSidebar'
+import {
+  AboutSection,
+  ProjectsSection,
+  SkillsSection,
+  ExperienceSection,
+  EducationSection,
+  InterestsSection,
+  OtherSection,
+} from '../components/sections'
+
+export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false)
 
-  useEffect(() => {
-    const fetchHtml = async () => {
-      const html = await fetch('/index.html')
-      const htmlString = await html.text()
-      setHtmlFile(htmlString)
-    }
-
-    fetchHtml()
-    setTimeout(() => {
-      setContentReady(true)
-    }, 0)
-  })
-
-  const openModal = () => {
-    setModalOpen(true)
-    window.dataLayer && window.dataLayer.push({
-      'event': 'IMAGE_VIEW',
-      'time_stamp': `${new Date()}`
-    })
-  }
-
-  const closeModal = () => {
-    setModalOpen(false)
-  }
-
-  const onResumeClick = () => {
-    window.dataLayer && window.dataLayer.push({
-      'event': 'RESUME_VIEW',
-      'time_stamp': `${new Date()}`
-    })
-  }
-
-  const onXingzheClick = () => {
-    window.dataLayer && window.dataLayer.push({
-      'event': 'XINGZHEFANGCHE_VIEW',
-      'time_stamp': `${new Date()}`
-    })
-  }
-
-  useEffect(() => {
-    document.getElementById('avatar')?.addEventListener('click', openModal)
-    document.getElementById('resume')?.addEventListener('click', onResumeClick)
-    document.getElementById('xingzhefangche')?.addEventListener('click', onXingzheClick)
-  })
-
   return (
-    <div>
+    <>
       <Head>
         <title>Tianya Liu</title>
         <meta name="description" content="Welcome to my personal website" />
         <link rel="icon" href="/logo.jpg" />
       </Head>
 
-      {isModalOpen &&
+      {isModalOpen && (
         <Lightbox
-          large={'/img/head2.jpg'}
-          onClose={closeModal}
-        />}
+          large="/img/head2.jpg"
+          onClose={() => setModalOpen(false)}
+        />
+      )}
 
-      {isContentReady &&
-        <div
-          dangerouslySetInnerHTML={{
-            __html: htmlFile
-          }}
-        />}
-    </div>
+      <div className="page">
+        <ProfileSidebar onAvatarClick={() => setModalOpen(true)} />
+
+        <main className="content">
+          <AboutSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ExperienceSection />
+          <EducationSection />
+          <InterestsSection />
+          <OtherSection />
+        </main>
+      </div>
+    </>
   )
-}
-
-export async function getServerSideProps({ req, res, query }) {
-
-  return {
-    props: {}
-  }
 }

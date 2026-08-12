@@ -1,11 +1,14 @@
+const path = require('path')
+
 module.exports = {
   reactStrictMode: true,
-  rewrites: async () => {
+  outputFileTracingRoot: path.join(__dirname),
+  async rewrites() {
     return [
       {
-        source: "/about",
-        destination: "/index.html",
-      }
+        source: '/about',
+        destination: '/',
+      },
     ]
-  }
+  },
 }
