@@ -5,7 +5,7 @@ import { icons } from '../icons'
 const skillGroups = [
   {
     label: 'Languages',
-    tags: ['JavaScript', 'TypeScript', 'Java', 'SQL', 'PL/SQL', 'C#'],
+    tags: ['JavaScript', 'TypeScript', 'Python', 'Java', 'SQL', 'PL/SQL', 'C#'],
   },
   {
     label: 'Web Development',
@@ -16,7 +16,7 @@ const skillGroups = [
   },
   {
     label: 'Database',
-    tags: ['MongoDB', 'Oracle', 'PL/SQL', 'MySQL'],
+    tags: ['MongoDB', 'PostgreSQL', 'Oracle', 'PL/SQL', 'MySQL'],
   },
   {
     label: 'Other',

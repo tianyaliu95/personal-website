@@ -560,8 +560,8 @@ b {
 }
 
 .project:hover {
-  border-color: rgba(31, 111, 181, 0.18);
-  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(31, 111, 181, 0.2);
+  background: rgba(31, 111, 181, 0.07);
 }
 
 .project:last-child {
@@ -571,33 +571,30 @@ b {
 .project-link {
   display: inline-flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   max-width: 100%;
-  font-size: 15.5px;
-  color: var(--ink);
-  padding-bottom: 3px;
-  line-height: 1.45;
+  font-family: var(--font-display);
+  font-size: 17.5px;
+  color: #1a5a94;
+  padding-bottom: 4px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
   position: relative;
   z-index: 1;
 }
 
 .project-link > svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   color: var(--accent);
-  margin-top: 0.28em;
-  transition: transform 0.3s var(--ease-out);
-}
-
-.project:hover .project-link > svg {
-  transform: translateX(2px) scale(1.08);
+  margin-top: 0.3em;
 }
 
 .project-link strong {
   position: relative;
-  font-weight: 700;
-  color: var(--ink);
+  font-weight: 600;
+  color: #1a5a94;
   min-width: 0;
   overflow-wrap: anywhere;
 }
@@ -605,12 +602,7 @@ b {
 .project-external {
   display: inline-block;
   margin-left: 0.4em;
-  vertical-align: -0.12em;
-  transition: transform 0.3s var(--ease-out);
-}
-
-.project:hover .project-external {
-  transform: translate(2px, -2px);
+  vertical-align: -0.1em;
 }
 
 .project-external svg {
@@ -627,13 +619,17 @@ b {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background: var(--ink);
+  background: #1a5a94;
   transition: width 0.3s ease, left 0.3s ease;
   opacity: 0;
 }
 
 .project-link:hover {
-  color: var(--ink);
+  color: #154a7a;
+}
+
+.project-link:hover strong {
+  color: #154a7a;
 }
 
 .project-link:hover strong::after {
@@ -643,9 +639,10 @@ b {
 }
 
 .project ul {
-  margin-top: 0.6rem;
+  margin-top: 0.75rem;
   color: var(--ink-soft);
   font-size: var(--fs-body);
+  line-height: 1.7;
   position: relative;
   z-index: 1;
 }
@@ -711,18 +708,18 @@ b {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 148px;
   gap: 18px;
-  margin-bottom: 1.35rem;
-  padding: 10px 12px;
-  margin-left: -12px;
-  margin-right: -12px;
-  border-radius: 12px;
-  border-bottom: 1px solid transparent;
-  transition: background 0.25s ease, transform 0.25s ease;
+  margin-bottom: 1.1rem;
+  padding: 14px 14px 12px;
+  margin-left: -14px;
+  margin-right: -14px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .entry:hover {
-  background: rgba(31, 111, 181, 0.04);
-  transform: translateX(2px);
+  border-color: rgba(31, 111, 181, 0.2);
+  background: rgba(31, 111, 181, 0.07);
 }
 
 .entry:last-child {

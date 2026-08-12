@@ -7,6 +7,54 @@ export default function ProjectsSection() {
   return (
     <Section icon={icons.briefcase} title={<>Personal &nbsp;Projects</>}>
       <Project
+        id="fitness-pilot"
+        href="https://fitness-pilot.vercel.app"
+        icon={icons.activity}
+        title="Fitness Pilot – Carb Cycling Training Assistant 碳循环训练助手"
+        onClick={() => track('FITNESS_PILOT_VIEW')}
+      >
+        <li>
+          Built an end-to-end <b>Next.js</b> + <b>TypeScript</b> fitness platform for personalized carb-cycling
+          planning, nutrition optimization, and training analytics
+        </li>
+        <li>
+          Integrated <b>OpenAI API</b> to deliver AI coaching for plan refinement, diet logging,
+          and actionable nutrition / training recommendations
+        </li>
+        <li>
+          Architected adaptive cycle scheduling with cloud sync via <b>Firebase Auth</b> / <b>Firestore</b>
+          {' '}and offline resilience with local storage fallback
+        </li>
+        
+        <li>
+          Delivered an installable <b>PWA</b> with seamless real-time sync for a native-app-like
+          experience across mobile and desktop
+        </li>
+      </Project>
+
+      <Project
+        id="teapresso"
+        href="https://tea-presso.com"
+        icon={icons.coffee}
+        title="Teapresso Official Website – 野萃品牌官方网站"
+        onClick={() => track('TEAPRESSO_VIEW')}
+      >
+        <li>
+          Led end-to-end design and development of Teapresso’s official digital platform with <b>Next.js</b>, <b>React</b>,{' '}
+          <b>TypeScript</b>, and <b>Tailwind CSS</b>, scaling brand presence across UK / NA markets
+        </li>
+        <li>
+          Built conversion-critical commerce flows spanning multi-location discovery, <b>Shopify</b>-powered online
+          ordering / cart checkout, click &amp; collect pickup, and franchise lead capture powered by <b>Resend</b>
+          {' '}email automation
+        </li>
+        <li>
+          Drove <b>SEO</b> / structured-data optimization and growth instrumentation with <b>Google Analytics</b> and{' '}
+          <b>Vercel Analytics</b> to maximize acquisition and conversion performance
+        </li>
+      </Project>
+
+      <Project
         id="xingzhefangche"
         href="https://xingzhefangche.com"
         icon={icons.truck}
@@ -14,17 +62,17 @@ export default function ProjectsSection() {
         onClick={() => track('XINGZHEFANGCHE_VIEW')}
       >
         <li>
-          Designed and developed a <b>NextJS</b> based web application for
-          XingzheRV, a family-owned RV campground in Nanjing, China
+          Designed and launched a <b>Next.js</b> marketing site for XingzheRV, a family-owned RV campground
+          in Nanjing, modernizing its online booking inquiry and brand storytelling experience
         </li>
         <li>
-          Built responsive user interface supporting content management and
-          email subscriptions
+          Crafted a responsive UI with lightweight content management support and email subscription
+          capture to nurture returning campers and seasonal campaigns
         </li>
         <li>
-          Integrated <b>Google Analytics</b> allowing real-time user activity and behavior tracking across the site
+          Wired <b>Google Analytics</b> for live traffic / behavior insights to guide content prioritization
+          and on-site UX improvements
         </li>
-        <li>More coming soon...</li>
       </Project>
 
       <Project

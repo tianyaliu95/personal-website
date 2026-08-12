@@ -100,6 +100,18 @@ export const icons = {
       <path d="M1 8h13v9H1zM14 11h5l3 3v3h-8v-6zM5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
     </Icon>
   ),
+  activity: (
+    <Icon>
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </Icon>
+  ),
+  coffee: (
+    <Icon>
+      <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+      <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" />
+      <path d="M6 2v2M10 2v2M14 2v2" />
+    </Icon>
+  ),
   bookOpen: (
     <Icon>
       <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
