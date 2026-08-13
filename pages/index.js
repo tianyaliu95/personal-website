@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import { Lightbox } from 'react-modal-image'
 
 import AmbientField from '../components/effects/AmbientField'
 import BackToTop from '../components/effects/BackToTop'
+import ImageLightbox from '../components/effects/ImageLightbox'
 import ProfileSidebar from '../components/ProfileSidebar'
 import {
   ResumeSection,
@@ -31,8 +31,9 @@ export default function Home() {
       <BackToTop />
 
       {isModalOpen && (
-        <Lightbox
-          large="/img/head2.jpg"
+        <ImageLightbox
+          src="/img/head2.jpg"
+          alt="Tianya Liu"
           onClose={() => setModalOpen(false)}
         />
       )}

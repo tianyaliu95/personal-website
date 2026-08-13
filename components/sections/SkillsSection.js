@@ -10,7 +10,7 @@ const skillGroups = [
   {
     label: 'Web Development',
     tags: [
-      'React', 'NodeJS', 'NextJS', 'Jest', 'Express', 'RESTful',
+      'React', 'Node.js', 'Next.js', 'Jest', 'Express', 'RESTful',
       'GraphQL', 'HTML/CSS', 'Commercetools', 'Amplience', 'jQuery',
     ],
   },
