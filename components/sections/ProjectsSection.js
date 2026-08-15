@@ -14,21 +14,20 @@ export default function ProjectsSection() {
         onClick={() => track('FITNESS_PILOT_VIEW')}
       >
         <li>
-          Built an end-to-end <b>Next.js</b> + <b>TypeScript</b> fitness platform for personalized carb-cycling
-          planning, nutrition optimization, and training analytics
+          Built an end-to-end <b>Next.js</b> + <b>TypeScript</b> fitness platform for carb-cycling planning,
+          nutrition tracking, and training analytics
         </li>
         <li>
-          Integrated <b>OpenAI API</b> to deliver AI coaching for plan refinement, diet logging,
-          and actionable nutrition / training recommendations
+          Integrated <b>Google Gemini API</b> into a context-aware AI coach for plan iteration, diet logging,
+          and personalized training / nutrition guidance
         </li>
         <li>
-          Architected adaptive cycle scheduling with cloud sync via <b>Firebase Auth</b> / <b>Firestore</b>
-          {' '}and offline resilience with local storage fallback
+          Designed multi-device state sync with <b>Firebase Auth</b> / <b>Firestore</b>, guest mode, and a
+          guided onboarding flow to reduce first-run friction
         </li>
-        
         <li>
-          Delivered an installable <b>PWA</b> with seamless real-time sync for a native-app-like
-          experience across mobile and desktop
+          Delivered bilingual <b>i18n</b> (EN / ZH) and an installable mobile-first <b>PWA</b>, plus <b>SEO</b> and analytics
+          to boost reach and retention
         </li>
       </Project>
 
