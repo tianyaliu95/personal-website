@@ -634,6 +634,78 @@ b {
   height: 15px;
 }
 
+/* —— Leave a note —— */
+.easter-form {
+  display: grid;
+  gap: 10px;
+}
+
+.easter-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.easter-input:focus {
+  border-color: rgba(31, 111, 181, 0.45);
+  box-shadow: 0 0 0 3px rgba(31, 111, 181, 0.12);
+}
+
+.easter-textarea {
+  resize: vertical;
+  min-height: 42px;
+  line-height: 1.5;
+}
+
+.easter-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.easter-submit {
+  justify-self: start;
+  appearance: none;
+  border: 1px solid rgba(31, 111, 181, 0.28);
+  border-radius: 10px;
+  padding: 9px 14px;
+  background: rgba(31, 111, 181, 0.1);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.easter-submit:hover:not(:disabled) {
+  background: rgba(31, 111, 181, 0.16);
+  border-color: rgba(31, 111, 181, 0.45);
+}
+
+.easter-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.easter-error {
+  margin: 0;
+  color: #b42318;
+  font-size: var(--fs-small);
+}
+
+.easter-success {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* —— Projects —— */
 .project {
   position: relative;
