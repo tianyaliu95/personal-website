@@ -80,26 +80,34 @@ export default async function handler(req, res) {
     return res.status(503).json({ error: 'Message inbox is not configured yet.' })
   }
 
-  const { message = '', website = '', client = {} } = req.body || {}
+  const { message = '', website = '', client = {}, source = 'note', command = '' } = req.body || {}
+  const isTerminal = source === 'terminal'
 
   // Honeypot — bots fill hidden fields
   if (typeof website === 'string' && website.trim()) {
     return res.status(200).json({ ok: true })
   }
 
-  const trimmedMessage = String(message).trim().slice(0, MAX_MESSAGE)
+  const rawInput = isTerminal ? command : message
+  const maxLen = isTerminal ? 200 : MAX_MESSAGE
+  const minLen = isTerminal ? 1 : 2
+  const trimmedMessage = String(rawInput).trim().slice(0, maxLen)
 
-  if (!trimmedMessage || trimmedMessage.length < 2) {
+  if (!trimmedMessage || trimmedMessage.length < minLen) {
     return res.status(400).json({ error: 'Message is too short.' })
   }
 
   const meta = collectMeta(req, client)
+  const heading = isTerminal
+    ? '**Mini terminal command from tianyaliu.ca**'
+    : '**New message from tianyaliu.ca**'
+  const body = isTerminal ? `\`${trimmedMessage}\`` : trimmedMessage
 
   const content = [
     '================================================',
-    '**New message from tianyaliu.ca**',
+    heading,
     '',
-    trimmedMessage,
+    body,
     '',
     '------------------------------------------------',
     `**Device:** ${meta.device}`,

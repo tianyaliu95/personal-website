@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Seo from '../components/Seo'
 import AmbientField from '../components/effects/AmbientField'
 import BackToTop from '../components/effects/BackToTop'
+import MiniTerminal from '../components/effects/MiniTerminal'
 import ImageLightbox from '../components/effects/ImageLightbox'
 import ProfileSidebar from '../components/ProfileSidebar'
 import SectionNav from '../components/SectionNav'
@@ -75,6 +76,7 @@ export default function Home() {
 
       <AmbientField />
       <BackToTop />
+      <MiniTerminal />
 
       {isModalOpen && (
         <ImageLightbox
