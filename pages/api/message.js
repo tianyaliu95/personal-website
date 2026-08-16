@@ -7,6 +7,16 @@ function firstHeader(value) {
   return String(value).split(',')[0].trim()
 }
 
+function decodeHeader(value) {
+  const raw = firstHeader(value)
+  if (!raw) return ''
+  try {
+    return decodeURIComponent(raw.replace(/\+/g, ' '))
+  } catch {
+    return raw
+  }
+}
+
 function summarizeUserAgent(ua) {
   if (!ua) return 'Unknown device'
 
@@ -36,9 +46,9 @@ function collectMeta(req, client = {}) {
     req.socket?.remoteAddress ||
     ''
 
-  const country = firstHeader(headers['x-vercel-ip-country'])
-  const region = firstHeader(headers['x-vercel-ip-country-region'])
-  const city = firstHeader(headers['x-vercel-ip-city'])
+  const country = decodeHeader(headers['x-vercel-ip-country'])
+  const region = decodeHeader(headers['x-vercel-ip-country-region'])
+  const city = decodeHeader(headers['x-vercel-ip-city'])
   const geoParts = [city, region, country].filter(Boolean)
 
   return {
