@@ -18,8 +18,7 @@ export default function ProjectsSection() {
           nutrition tracking, and training analytics
         </li>
         <li>
-          Integrated <b>Google Gemini API</b> into a context-aware AI coach for plan iteration, diet logging,
-          and personalized training / nutrition guidance
+          Integrated <b>Google Gemini API</b> into a context-aware AI coach grounded in live user state for personalized nutrition and training guidance
         </li>
         <li>
           Designed multi-device state sync with <b>Firebase Auth</b> / <b>Firestore</b>, guest mode, and a
