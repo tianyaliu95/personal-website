@@ -5,6 +5,7 @@ import AmbientField from '../components/effects/AmbientField'
 import BackToTop from '../components/effects/BackToTop'
 import ImageLightbox from '../components/effects/ImageLightbox'
 import ProfileSidebar from '../components/ProfileSidebar'
+import SectionNav from '../components/SectionNav'
 import {
   ResumeSection,
   AboutSection,
@@ -84,7 +85,12 @@ export default function Home() {
       )}
 
       <div className="page">
-        <ProfileSidebar onAvatarClick={() => setModalOpen(true)} />
+        <div className="sidebar-col">
+          <div className="sidebar-stack">
+            <ProfileSidebar onAvatarClick={() => setModalOpen(true)} />
+            <SectionNav />
+          </div>
+        </div>
 
         <main className="content" id="main">
           <ResumeSection />

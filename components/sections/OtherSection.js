@@ -92,7 +92,7 @@ export default function OtherSection() {
   }
 
   return (
-    <Section icon={icons.book} title="Leave a note?">
+    <Section id="note" icon={icons.book} title="Leave a note?">
       {status === 'sent' ? (
         <p className="easter-success">Thanks — Message sent.</p>
       ) : (

@@ -5,7 +5,7 @@ const interests = ['Hip-Hop', 'Music', 'Basketball', 'Fitness', 'Traveling', 'Mo
 
 export default function InterestsSection() {
   return (
-    <Section icon={icons.heart} title="Interests">
+    <Section id="interests" icon={icons.heart} title="Interests">
       <div className="skill-tags">
         {interests.map((tag) => (
           <span key={tag} className="tag">{tag}</span>

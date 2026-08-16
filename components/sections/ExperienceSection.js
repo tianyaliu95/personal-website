@@ -4,7 +4,7 @@ import { icons } from '../icons'
 
 export default function ExperienceSection() {
   return (
-    <Section icon={icons.building} title="Previous Mechanical Work Experience">
+    <Section id="experience" icon={icons.building} title="Previous Mechanical Work Experience">
       <Entry
         title="Engineering Specialist Intern, F&P Manufacturing Inc."
         meta={

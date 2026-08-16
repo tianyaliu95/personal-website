@@ -3,7 +3,7 @@ import { icons } from '../icons'
 
 export default function AboutSection() {
   return (
-    <Section icon={icons.user} title="About Me">
+    <Section id="about" icon={icons.user} title="About Me">
       <div className="about-copy">
         <p>
           Graduated from the University of Waterloo, with a master&apos;s degree in

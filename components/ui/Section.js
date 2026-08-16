@@ -1,10 +1,11 @@
 import { useInView } from '../../hooks/useInView'
 
-export default function Section({ icon, title, children }) {
+export default function Section({ id, icon, title, children }) {
   const [ref, inView] = useInView()
 
   return (
     <section
+      id={id}
       ref={ref}
       className={`section${inView ? ' is-visible' : ''}`}
     >

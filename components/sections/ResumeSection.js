@@ -4,9 +4,8 @@ import { track } from '../../lib/analytics'
 
 export default function ResumeSection() {
   return (
-    <Section icon={icons.file} title="Resume">
+    <Section id="resume" icon={icons.file} title="Resume">
       <a
-        id="resume"
         href="/resume.pdf"
         className="resume-link"
         target="_blank"

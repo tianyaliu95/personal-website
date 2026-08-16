@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { smoothScrollTo } from '../../lib/smoothScroll'
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false)
@@ -11,7 +12,7 @@ export default function BackToTop() {
   }, [])
 
   const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    smoothScrollTo(0, { duration: 700 })
   }
 
   return (

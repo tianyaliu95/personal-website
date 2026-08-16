@@ -4,7 +4,7 @@ import { icons } from '../icons'
 
 export default function EducationSection() {
   return (
-    <Section icon={icons.education} title="Education">
+    <Section id="education" icon={icons.education} title="Education">
       <Entry
         title="Master of Engineering (M.Eng), Mechanical & Mechatronics Engineering, University of Waterloo"
         meta={<p>2017 - 2019</p>}

@@ -37,7 +37,7 @@ const skillGroups = [
 
 export default function SkillsSection() {
   return (
-    <Section icon={icons.code} title="Skills">
+    <Section id="skills" icon={icons.code} title="Skills">
       {skillGroups.map((group) => (
         <SkillGroup key={group.label} label={group.label} tags={group.tags} />
       ))}

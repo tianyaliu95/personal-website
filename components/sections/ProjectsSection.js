@@ -5,12 +5,13 @@ import { track } from '../../lib/analytics'
 
 export default function ProjectsSection() {
   return (
-    <Section icon={icons.briefcase} title={<>Personal &nbsp;Projects</>}>
+    <Section id="projects" icon={icons.briefcase} title={<>Personal &nbsp;Projects</>}>
       <Project
         id="fitness-pilot"
         href="https://fitness-pilot.vercel.app"
         icon={icons.activity}
         title="Fitness Pilot – Carb Cycling Training Assistant 碳循环训练助手"
+        live
         onClick={() => track('FITNESS_PILOT_VIEW')}
       >
         <li>
@@ -35,6 +36,7 @@ export default function ProjectsSection() {
         href="https://tea-presso.com"
         icon={icons.coffee}
         title="Teapresso Official Website – 野萃品牌官方网站"
+        live
         onClick={() => track('TEAPRESSO_VIEW')}
       >
         <li>
@@ -57,6 +59,7 @@ export default function ProjectsSection() {
         href="https://xingzhefangche.com"
         icon={icons.truck}
         title="Nanjing XingzheRV Official Website - 南京行者房车营地官方网站"
+        live
         onClick={() => track('XINGZHEFANGCHE_VIEW')}
       >
         <li>
