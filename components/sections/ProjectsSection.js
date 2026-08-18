@@ -7,6 +7,35 @@ export default function ProjectsSection() {
   return (
     <Section id="projects" icon={icons.briefcase} title={<>Personal &nbsp;Projects</>}>
       <Project
+        id="shopping-compare"
+        href="https://shopping-compare-agent.vercel.app"
+        icon={icons.lightbulb}
+        title="Shopping Compare AI Agent – 购物对比 AI Agent"
+        live
+        onClick={() => track('SHOP_COMPARE_VIEW')}
+      >
+        <li>
+          Built an agentic product-comparison web app with <b>Next.js</b>, <b>React</b>, and <b>TypeScript</b>{' '}
+          that transforms product inputs and user preferences into cited comparison matrices and personalized
+          recommendations, with bilingual <b>i18n</b> support (EN / ZH)
+        </li>
+        <li>
+          Engineered a bounded-autonomy agent architecture using <b>Google Gemini API</b> and{' '}
+          <b>function-calling</b>, enabling models to plan comparison criteria and autonomously select the
+          appropriate tools
+        </li>
+        <li>
+          Implemented a <b>ReAct agent loop (Reasoning + Acting)</b> that executes parallel{' '}
+          <b>web_search</b> / <b>fetch_page</b> calls, feeds observations back to the model, and iterates until
+          sufficient evidence is collected for a final recommendation
+        </li>
+        <li>
+          Streamed agent activity via <b>Server-Sent Events (SSE)</b>, with JSON schema validation and
+          quota-aware retries for reliable execution
+        </li>
+      </Project>
+
+      <Project
         id="fitness-pilot"
         href="https://fitness-pilot.vercel.app"
         icon={icons.activity}
@@ -15,15 +44,15 @@ export default function ProjectsSection() {
         onClick={() => track('FITNESS_PILOT_VIEW')}
       >
         <li>
-          Built an end-to-end <b>Next.js</b> + <b>TypeScript</b> fitness platform for carb-cycling planning,
-          nutrition tracking, and training analytics
+          Built a full-stack <b>Next.js</b> + <b>TypeScript</b> fitness platform backed by{' '}
+          <b>Cloud Firestore</b> for carb-cycling planning, nutrition tracking, and training analytics
         </li>
         <li>
-          Integrated <b>Google Gemini API</b> into a context-aware AI coach grounded in live user state for personalized nutrition and training guidance
-        </li>
-        <li>
-          Designed multi-device state sync with <b>Firebase Auth</b> / <b>Firestore</b>, guest mode, and a
+          Implemented multi-device state sync with <b>Firebase Auth</b>, guest mode, and a
           guided onboarding flow to reduce first-run friction
+        </li>
+        <li>
+          Integrated <b>OpenAI API</b> into a context-aware AI coach grounded in live user state for personalized nutrition and training guidance
         </li>
         <li>
           Delivered bilingual <b>i18n</b> (EN / ZH) and an installable mobile-first <b>PWA</b>, plus <b>SEO</b> and analytics
